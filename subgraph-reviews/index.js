@@ -11,7 +11,7 @@ const ReviewsAPI = require('./datasources/ReviewsApi');
 async function startApolloServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
 
-  const port = 4002;
+  const port = 80;
   const subgraphName = 'reviews';
 
   try {
@@ -23,7 +23,7 @@ async function startApolloServer() {
           },
         };
       },
-      listen: { port },
+      listen: { port,host: '0.0.0.0'},
     });
 
     console.log(`🚀 Subgraph ${subgraphName} running at ${url}`);
