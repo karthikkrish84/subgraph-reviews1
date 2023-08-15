@@ -2,6 +2,9 @@ const resolvers = {
   Query: {
     latestReviews: (_, __, {dataSources}) => {
       return dataSources.reviewsAPI.getLatestReviews();
+    },
+    location: ({locationId}) => {
+      return {id: locationId};
     }
   },
   Mutation: {
