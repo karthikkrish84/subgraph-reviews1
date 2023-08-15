@@ -14,7 +14,7 @@ async function startApolloServer() {
     schema: buildSubgraphSchema({ typeDefs, resolvers }), 
   });
 
-  const port = 4001;
+  const port = 80;
   const subgraphName = 'locations';
 
   try {
@@ -26,7 +26,7 @@ async function startApolloServer() {
           },
         };
       },
-      listen: { port },
+      listen: { port,host: '0.0.0.0' },
     });
 
     console.log(`🚀 Subgraph ${subgraphName} running at ${url}`);
