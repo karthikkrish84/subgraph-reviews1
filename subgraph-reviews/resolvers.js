@@ -1,8 +1,10 @@
 const resolvers = {
-  Query: {
+  Query: {  
     latestReviews: (_, __, {dataSources}) => {
       return dataSources.reviewsAPI.getLatestReviews();
-    },
+    }
+  },
+  Review: {
     location: ({locationId}) => {
       return {id: locationId};
     }
